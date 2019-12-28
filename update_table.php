@@ -1,10 +1,19 @@
-<?php include('header.php'); 
+<?php  
+//add database connection file
 include ('dbcon.php');
 $id=$_GET['id'];
 $sql="SELECT * FROM oopinsert WHERE id='$id'";
 $result=$conn->query($sql);
 ?>
+<html>
+	<title>komal-pixel CRUD Operation using OOp</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+<!-- like for editable rows -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tabledit.js"></script>
+<body
 <section>
 	<div class="container">
 		<div class="heading text-center">
@@ -20,7 +29,7 @@ $result=$conn->query($sql);
 							<label>Email</label>
 							<input class=" email" type="text" name="email" value="'.$row['email'].'"> <br><br>	
 							<button class="btn btn-info" name="save">submit</button>';
-				  } ?>	
+						  } ?>	
 			</form>
 		</div>	
 	</div>
@@ -42,4 +51,6 @@ if(isset($_POST['save'])){
 	}
 	$conn->close();
 	}
- include('footer.php'); ?>}
+  ?>}
+</body>
+</html>
